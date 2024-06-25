@@ -1,19 +1,17 @@
-<?php 
+<?php
     //AQUI VAI SER NOSSA APLICAÇÃO
     require_once __DIR__ . '/../../api/config.php';
     require_once __DIR__ . '/../../api/response.php';
 
-    if(API_IS_ACTIVE) {
-        echo Response::resposta(200,'sucesso',[
+    if(API_IS_ACTIVE){
+        echo Response::resp(200,'sucesso',[
             'versao_api' => API_VERSION,
-            'status' => 'ativa'
+            'status' => 'ativa',
         ]);
-    }
-    
-    else {
-        echo Response::resposta(200,'sucesso',[
+    }else{
+        echo Response::resp(200,'sucesso',[
             'versao_api' => API_VERSION,
-            'status' => 'manutencao'
+            'status' => 'manutenção',
         ]);
     }
 ?>
